@@ -59,6 +59,10 @@ message GetGymResponse{
 }
 message ListGymRequest{
     int32 page = 1;
+    string name = 2;
+    string location = 3;
+    string type_sport = 4;
+    string type_gender = 5;
 }
 
 message ListGymResponse{
