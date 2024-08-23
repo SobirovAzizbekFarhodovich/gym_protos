@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+option go_package = "genprotos/";
+
+package facility;
+
+service FacilityService{
+    rpc CreateFacility(CreateFacilityRequest) returns(CreateFacilityResponse){}
+    rpc UpdateFacility(UpdateFacilityRequest) returns(UpdateFacilityResponse){}
+    rpc DeleteFacility(DeleteFacilityRequest) returns(DeleteFacilityResponse){}
+    rpc ListFacility(ListFacilityRequest) returns(ListFacilityResponse){}
+    rpc GetFacility(GetFacilityRequest) returns(GetFacilityResponse){}
+}
+
+message CreateFacilityRequest{
+    string name = 1;
+    string type = 2;
+    string image = 3;
+    string description = 4; 
+}
+
+message CreateFacilityResponse{}
+
+message UpdateFacilityRequest{
+    string name = 1;
+    string type = 2;
+    string image = 3;
+    string description = 4; 
+    string id = 5;
+}
+
+message UpdateFacilityResponse{}
+
+message DeleteFacilityRequest{
+    string id = 1;
+}
+
+message DeleteFacilityResponse{}
+
+message GetFacilityRequest{
+    string id = 1;
+}
+
+message GetFacilityResponse{
+    string name = 1;
+    string type = 2;
+    string image = 3;
+    string description = 4; 
+    string id = 5;
+}
+message ListFacilityRequest{
+    int32 page = 1;
+}
+
+message ListFacilityResponse{
+    repeated GetFacilityResponse Facility = 1; 
+}
