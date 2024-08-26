@@ -13,11 +13,11 @@ service GymService{
 }
 
 message CreateGymRequest{
-    string longtitude = 1;
+    float longtitude = 1;
     string name = 2;
     string location = 3;
     string contact_number = 4;
-    string latitude = 5;
+    float latitude = 5;
     string type_sport = 6;
     string type_gender = 7;
 }
@@ -25,11 +25,11 @@ message CreateGymRequest{
 message CreateGymResponse{}
 
 message UpdateGymRequest{
-    string longtitude = 1;
+    float longtitude = 1;
     string name = 2;
     string location = 3;
     string contact_number = 4;
-    string latitude = 5;
+    float latitude = 5;
     string type_sport = 6;
     string type_gender = 7;
     string id = 8;
@@ -48,11 +48,11 @@ message GetGymRequest{
 }
 
 message GetGymResponse{
-    string longtitude = 1;
+    float longtitude = 1;
     string name = 2;
     string location = 3;
     string contact_number = 4;
-    string latitude = 5;
+    float latitude = 5;
     string type_sport = 6;
     string type_gender = 7;
     string id = 8;
