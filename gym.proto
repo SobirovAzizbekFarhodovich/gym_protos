@@ -20,6 +20,7 @@ message CreateGymRequest{
     float latitude = 5;
     string type_sport = 6;
     string type_gender = 7;
+    string owner_id = 8;
 }
 
 message CreateGymResponse{}
@@ -33,6 +34,7 @@ message UpdateGymRequest{
     string type_sport = 6;
     string type_gender = 7;
     string id = 8;
+    string owner_id = 9;
 }
 
 message UpdateGymResponse{}
@@ -56,6 +58,7 @@ message GetGymResponse{
     string type_sport = 6;
     string type_gender = 7;
     string id = 8;
+    string owner_id = 9;
 }
 message ListGymRequest{
     int32 page = 1;
