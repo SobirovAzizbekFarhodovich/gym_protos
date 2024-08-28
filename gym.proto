@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+option go_package = "genprotos/";
+
+package gym;
+
+service GymService{
+    rpc CreateGym(CreateGymRequest) returns(CreateGymResponse){}
+    rpc UpdateGym(UpdateGymRequest) returns(UpdateGymResponse){}
+    rpc DeleteGym(DeleteGymRequest) returns(DeleteGymResponse){}
+    rpc ListGym(ListGymRequest) returns(ListGymResponse){}
+    rpc GetGym(GetGymRequest) returns(GetGymResponse){}
+}
+
+message CreateGymRequest{
+    float longtitude = 1;
+    string name = 2;
+    string location = 3;
+    string contact_number = 4;
+    float latitude = 5;
+    string type_sport = 6;
+    string type_gender = 7;
+    string owner_id = 8;
+}
+
+message CreateGymResponse{}
+
+message UpdateGymRequest{
+    float longtitude = 1;
+    string name = 2;
+    string location = 3;
+    string contact_number = 4;
+    float latitude = 5;
+    string type_sport = 6;
+    string type_gender = 7;
+    string id = 8;
+    string owner_id = 9;
+}
+
+message UpdateGymResponse{}
+
+message DeleteGymRequest{
+    string id = 1;
+}
+
+message DeleteGymResponse{}
+
+message GetGymRequest{
+    string id = 1;
+}
+
+message GetGymResponse{
+    float longtitude = 1;
+    string name = 2;
+    string location = 3;
+    string contact_number = 4;
+    float latitude = 5;
+    string type_sport = 6;
+    string type_gender = 7;
+    string id = 8;
+    string owner_id = 9;
+}
+message ListGymRequest{
+    int32 page = 1;
+    string name = 2;
+    string location = 3;
+    string type_sport = 4;
+    string type_gender = 5;
+}
+
+message ListGymResponse{
+    repeated GetGymResponse gym = 1; 
+}

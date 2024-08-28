@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+option go_package = "genprotos/";
+
+package unique;
+
+service UniqueService{
+    rpc CreateUnique(CreateUniqueRequest) returns(CreateUniqueResponse){}
+    rpc UpdateUnique(UpdateUniqueRequest) returns(UpdateUniqueResponse){}
+    rpc DeleteUnique(DeleteUniqueRequest) returns(DeleteUniqueResponse){}
+    rpc ListUnique(ListUniqueRequest) returns(ListUniquesResponse){}
+    rpc GetUnique(GetUniqueRequest) returns(GetUniqueResponse){}
+}
+
+message CreateUniqueRequest{
+    string sport_halls_id = 1;
+    string facility_id = 2;
+    int32 count = 3;
+}
+
+message CreateUniqueResponse{}
+
+message UpdateUniqueRequest{
+    string sport_halls_id = 1;
+    string facility_id = 2;
+    int32 count = 3;
+    string id = 4;
+}
+
+message UpdateUniqueResponse{}
+
+message DeleteUniqueRequest{
+    string id = 1;
+}
+
+message DeleteUniqueResponse{}
+
+message GetUniqueRequest{
+    string id = 1;
+}
+
+message GetUniqueResponse{
+    string sport_halls_id = 1;
+    string facility_id = 2;
+    int32 count = 3;
+    string id = 4;
+}
+
+message ListUniqueRequest{
+    int32 page = 1;
+}
+
+message ListUniquesResponse{
+    repeated GetUniqueResponse uniques = 1;
+}
+
